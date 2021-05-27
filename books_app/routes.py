@@ -6,7 +6,7 @@ from books_app.models import Book, Author, Genre, User
 from books_app.forms import BookForm, AuthorForm, GenreForm
 
 # Import app and db from events_app package so that we can run app
-from books_app import app, db
+from books_app.extensions import app, db
 
 main = Blueprint("main", __name__)
 
@@ -26,7 +26,7 @@ def create_book():
     form = BookForm()
 
     # if form was submitted and contained no errors
-    if form.validate_on_submit(): 
+    if form.validate_on_submit():
         new_book = Book(
             title=form.title.data,
             publish_date=form.publish_date.data,
