@@ -1,6 +1,6 @@
 # Lab - Books App Part 2 (Forms)
 
-## Why should I do this?
+## Why Should I Do This?
 
 This lab will guide you through the process of writing and using Flask-WTForms form classes. This makes the process of using forms much more streamlined and "Pythonic", and will result in more robust, error-proof, and readable code. By the end of this lab, you should be ready to independently write and use form classes for your projects. 
 
@@ -10,10 +10,12 @@ Clone this repository to your computer.
 
 **Take a look at the code** - it looks a bit different than what you're used to. Namely, the code is now separated out into several files rather than being written in a single `app.py` file. Since we're now writing model and form code as well as route code, this will help us to maintain some structure and separation.
 
-**To run the code**, navigate to the project folder and run the following to install the required packages:
+**To run the code**, navigate to the project folder and run the following to create a virtual environment and install the required packages:
 
 ```
-pip3 install -r requirements.txt
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 Then, rename the `.env.example` file to `.env`:
@@ -25,8 +27,18 @@ mv .env.example .env
 Then you can run the following to run the Flask server:
 
 ```
-python3 app.py
+python app.py
 ```
+
+## As You Work
+
+Anytime you return to the project to write code or run the Flask server, be sure to **FIRST** activate your virtual environment:
+
+```bash
+source venv/bin/activate
+```
+
+You may then use `python` and `pip` normally. When you are done with the project for the session, simply close the terminal or type `deactivate` to terminate the virutal environment.
 
 ## Part 1: Explore Forms
 
