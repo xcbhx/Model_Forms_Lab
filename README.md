@@ -38,7 +38,9 @@ Anytime you return to the project to write code or run the Flask server, be sure
 source venv/bin/activate
 ```
 
-You may then use `python` and `pip` normally. When you are done with the project for the session, simply close the terminal or type `deactivate` to terminate the virutal environment.
+You may then run the `python` and `pip` normally.
+
+When you are finished coding, simply close the terminal or type `deactivate` to terminate the virutal environment.
 
 ## Part 1: Explore Forms
 
