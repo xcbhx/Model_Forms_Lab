@@ -15,7 +15,7 @@ class BookForm(FlaskForm):
     publish_date = DateField('Date Published', validators=[DataRequired()])
     author = QuerySelectField('Author', query_factory=lambda: Author.query.all(), allow_blank=False, get_label='name')
     audience = SelectField('Audience', choices=Audience.choices())
-    genres = QuerySelectMultipleField('Genres', query_factory=lambda: Genre.query.all())
+    genres = QuerySelectMultipleField('Genres', query_factory=lambda: Genre.query.all(), get_label='name')
     submit = SubmitField('Submit')
 
     def validate_title(form, field):
@@ -42,8 +42,8 @@ class AuthorForm(FlaskForm):
 
 class GenreForm(FlaskForm):
     """Form to create a genre."""
-
-    # TODO: Fill out the fields in this class for:
-    # - the genre's name (e.g. fiction, non-fiction, etc)
-    # - a submit button
-    pass
+    name = StringField('Genre Name', validators= [
+        DataRequired(),
+        Length(min=2, max=100, message="Name must be between 2 and 100 characters")
+    ])
+    submit = SubmitField('Submit')

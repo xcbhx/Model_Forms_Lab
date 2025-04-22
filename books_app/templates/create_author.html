@@ -4,15 +4,16 @@
 
 <p>Author creation form.</p>
 
-<form method="POST">
-  {{ form.hidden_tag() }}
-
-  {{ form.title.label }} {{ form.title() }}
-    {{ form.publish_date.label }} {{ form.publish_date() }}
-    {{ form.author.label }} {{ form.author() }}
-    {{ form.audience.label }} {{ form.audience() }}
-    {{ form.genres.label }} {{ form.genres() }}
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    
+    {{ form.name.label }}<br>
+    {{ form.name() }}<br><br>
+    
+    {{ form.biography.label }}<br>
+    {{ form.biography() }}<br><br>
+    
     {{ form.submit() }}
-</form>
+  </form>
 
 {% endblock %}
