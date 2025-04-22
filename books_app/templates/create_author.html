@@ -4,6 +4,15 @@
 
 <p>Author creation form.</p>
 
-<!-- TODO: Add a <form> element here and use the form variable to show the labels & fields -->
+<form method="POST">
+  {{ form.hidden_tag() }}
+
+  {{ form.title.label }} {{ form.title() }}
+    {{ form.publish_date.label }} {{ form.publish_date() }}
+    {{ form.author.label }} {{ form.author() }}
+    {{ form.audience.label }} {{ form.audience() }}
+    {{ form.genres.label }} {{ form.genres() }}
+    {{ form.submit() }}
+</form>
 
 {% endblock %}

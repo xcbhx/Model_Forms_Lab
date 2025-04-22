@@ -13,9 +13,9 @@ class BookForm(FlaskForm):
             Length(min=3, max=80, message="Your message needs to be betweeen 3 and 80 chars")
         ])
     publish_date = DateField('Date Published', validators=[DataRequired()])
-    author = QuerySelectField('Author', query_factory=lambda: Author.query, allow_blank=False)
+    author = QuerySelectField('Author', query_factory=lambda: Author.query.all(), allow_blank=False, get_label='name')
     audience = SelectField('Audience', choices=Audience.choices())
-    genres = QuerySelectMultipleField('Genres', query_factory=lambda: Genre.query)
+    genres = QuerySelectMultipleField('Genres', query_factory=lambda: Genre.query.all())
     submit = SubmitField('Submit')
 
     def validate_title(form, field):
